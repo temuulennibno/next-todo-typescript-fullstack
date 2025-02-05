@@ -16,6 +16,11 @@ export default function Home() {
       });
   }, []);
 
+  const onDelete = (id: string) => {
+    const newTodos = [...todos].filter((todo) => todo.id !== id);
+    setTodos(newTodos);
+  };
+
   return (
     <div className="min-h-screen w-full flex justify-center items-center flex-col gap-4">
       <form className="flex gap-2 w-[400px]">
@@ -24,7 +29,7 @@ export default function Home() {
       </form>
       <ul className="pl-4 list-disc w-full max-w-[400px]">
         {todos.map((todo) => (
-          <TodoItem todo={todo} key={todo.id} />
+          <TodoItem onDelete={onDelete} todo={todo} key={todo.id} />
         ))}
       </ul>
     </div>
