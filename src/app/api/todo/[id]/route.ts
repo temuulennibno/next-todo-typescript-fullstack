@@ -13,6 +13,3 @@ export const PUT = async (req: NextRequest, { params }: { params: Promise<{ id: 
   todos.splice(todoIndex, 1, updatingTodo);
   return NextResponse.json(updatingTodo);
 };
-
-// DELETE
-// READ ONE

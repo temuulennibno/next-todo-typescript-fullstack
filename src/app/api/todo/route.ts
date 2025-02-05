@@ -1,7 +1,8 @@
+import { Todo } from "@/types/todo";
 import { nanoid } from "nanoid";
 import { NextRequest, NextResponse } from "next/server";
 
-export const todos = [{ id: nanoid(), title: "My todo", checked: false }];
+export const todos: Todo[] = [{ id: nanoid(), title: "Sereerei zaluusai", checked: true }];
 
 export const GET = () => {
   return NextResponse.json(todos);
